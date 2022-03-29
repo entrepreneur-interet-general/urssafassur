@@ -1,2 +1,12 @@
+// Boostrap import
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+// Font import
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+// Variables
+@import 'variables/colors';
+
+// Components
+@import 'components/navbar';
