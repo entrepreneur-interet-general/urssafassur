@@ -1,24 +1,9 @@
-# README
+# URSSAFASSUR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+L'Urssaf lance un service d'aide à la gestion d'un prestataire de travaux pour accompagner les particuliers à trouver le bon prestataire et à sécuriser leurs travaux à domicile
 
-Things you may want to cover:
+## Architecture
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Rails 7.0.0  
+  Ruby 2.7.4  
+  PostgreSQL 14.0  
