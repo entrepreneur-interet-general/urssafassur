@@ -1,7 +1,7 @@
 nav.navbar.navbar-expand-sm.navbar-light.navbar-urssafassur.p-3
   .container
     = link_to root_path, class: "navbar-brand" do
-      = image_tag "logo_urssafassur.svg"
+      = image_tag "logo-urssaf.svg"
 
     button.navbar-toggler[type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"]
       span.navbar-toggler-icon
@@ -10,3 +10,5 @@ nav.navbar.navbar-expand-sm.navbar-light.navbar-urssafassur.p-3
       ul.navbar-nav.me-auto
         li.nav-item
           = link_to "Accueil", root_path, class: "nav-link"
+        li.nav-item
+          = link_to "Revenir sur le site Urssaf", "https://www.urssaf.fr", class: "nav-link"

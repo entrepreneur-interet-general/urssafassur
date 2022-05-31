@@ -1,0 +1,26 @@
+header.header-urssafassur
+  .container
+    h1 Urssafassur
+
+section.p-5
+  .container
+    .row
+      .col-sm-4
+      .col-sm-8
+        h2 L'outil Vérification Siret, une aide pour vérifier l'existence d'un prestataire
+        p Nous vous aidons à acquérir les bons réflexes pour des prestations à domicile sécurisées. 
+
+section.p-5
+  .container
+    .row
+      .col-sm-12
+        h2 Résultat
+      .col-sm-12
+        h2 Fiche d'identité de l'entreprise
+    .row
+      .col-sm-6
+        p Nom de l'entreprise
+        p = @artisan.name if @artisan
+      .col-sm-6
+        p Adresse de l'entreprise
+        p = @artisan.addresse if @artisan
