@@ -2,11 +2,17 @@ class ArtisansController < ApplicationController
   def create
     @artisan = Artisan.create(artisan_params)
 
-    @artisan.save
-
-    render turbo_stream: [
-      turbo_stream.replace("artisan", partial: "artisan", locals: { artisan: @artisan })
-    ]
+    if @artisan.save
+      render turbo_stream: [
+        turbo_stream.replace("artisan", partial: "artisan", locals: { artisan: @artisan }),
+        turbo_stream.replace("new_artisan", partial: "form", locals: { artisan: @artisan })
+      ]
+    else
+      render turbo_stream: [
+        turbo_stream.replace("new_artisan", partial: "form", locals: { artisan: @artisan }),
+        turbo_stream.replace("artisan", partial: "artisan", locals: { artisan: nil }),
+      ]
+    end
   end
 
   def show
