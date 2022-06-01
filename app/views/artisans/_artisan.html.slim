@@ -1,0 +1,14 @@
+#artisan
+  .container
+    .row
+      .col-sm-12
+        h2 Résultat
+      .col-sm-12
+        h2 Fiche d'identité de l'entreprise
+    .row
+      .col-sm-6
+        p Nom de l'entreprise
+        p = artisan.siret if artisan
+      .col-sm-6
+        p Adresse de l'entreprise
+        / p = artisan.addresse if artisan

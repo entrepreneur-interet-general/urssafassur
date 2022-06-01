@@ -1,5 +1,21 @@
 class ArtisansController < ApplicationController
+  def create
+    @artisan = Artisan.create(artisan_params)
+
+    @artisan.save
+
+    render turbo_stream: [
+      turbo_stream.replace("artisan", partial: "artisan", locals: { artisan: @artisan })
+    ]
+  end
+
   def show
-    @artisan = Artisan.find(params[:siret]) if params[:siret]
+    @new_artisan = Artisan.new
+  end
+
+  private
+
+  def artisan_params
+    params.require(:artisan).permit(:siret)
   end
 end

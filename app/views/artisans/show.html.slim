@@ -11,16 +11,9 @@ section.p-5
         p Nous vous aidons à acquérir les bons réflexes pour des prestations à domicile sécurisées. 
 
 section.p-5
-  .container
-    .row
-      .col-sm-12
-        h2 Résultat
-      .col-sm-12
-        h2 Fiche d'identité de l'entreprise
-    .row
-      .col-sm-6
-        p Nom de l'entreprise
-        p = @artisan.name if @artisan
-      .col-sm-6
-        p Adresse de l'entreprise
-        p = @artisan.addresse if @artisan
+  = turbo_frame_tag @new_artisan do |f|
+    = render "form", artisan: @new_artisan
+
+section.p-5
+  = turbo_frame_tag @artisan do |f|
+    = render "artisan", artisan: @artisan
