@@ -36,6 +36,9 @@ gem 'slim', '~> 4.1'
 # Forms made easy!
 gem 'simple_form', '~> 5.1'
 
+# HTTP/REST API client library.
+gem 'faraday', '~> 1.8'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
