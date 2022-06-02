@@ -11,17 +11,40 @@ class ArtisanContact
 
     company = JSON.parse response.body
 
+    adresse = company["etablissement"]["adresseEtablissement"]["numeroVoieEtablissement"] + " " +
+              company["etablissement"]["adresseEtablissement"]["typeVoieEtablissement"] + " " +
+              company["etablissement"]["adresseEtablissement"]["libelleVoieEtablissement"] + ", " +
+              company["etablissement"]["adresseEtablissement"]["codePostalEtablissement"] + " " +
+              company["etablissement"]["adresseEtablissement"]["libelleCommuneEtablissement"]
+
+    etat = company["etablissement"]["uniteLegale"]["etatAdministratifUniteLegale"] == "A" ? "Actif" : "Cessée"
+
     ArtisanContact.new(
       name: company["etablissement"]["uniteLegale"]["denominationUniteLegale"],
-      ape: company["etablissement"]["uniteLegale"]["activitePrincipaleUniteLegale"]
+      activite: company["etablissement"]["uniteLegale"]["activitePrincipaleUniteLegale"],
+      adresse: adresse,
+      etat: etat,
+      categorie: company["etablissement"]["uniteLegale"]["categorieEntreprise"],
+      date_creation: company["etablissement"]["dateCreationEtablissement"],
+      date_verification: company["etablissement"]["dateDernierTraitementEtablissement"]
     )
   end
 
-  def initialize(name:, ape:)
+  def initialize(name:, activite:, adresse:, etat:, categorie:, date_creation:, date_verification:)
     @name = name
-    @ape = ape
+    @activite = activite
+    @adresse = adresse
+    @etat = etat
+    @categorie = categorie
+    @date_creation = date_creation
+    @date_verification = date_verification
   end
 
   attr_accessor :name,
-                :ape
+                :activite,
+                :adresse,
+                :etat,
+                :categorie,
+                :date_creation,
+                :date_verification
 end
