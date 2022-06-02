@@ -1,3 +1,7 @@
 = simple_form_for artisan do |f|
   = f.input :siret
   = f.button :submit, "Rechercher", class: "btn btn-primary"
+
+  - if artisan.errors[:base].any?
+    .error_message
+      = artisan.errors.full_messages_for(:base).to_sentence

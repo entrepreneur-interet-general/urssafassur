@@ -8,7 +8,25 @@
     .row
       .col-sm-6
         p Nom de l'entreprise
-        p = artisan.siret if artisan
+        p = artisan.name if artisan
       .col-sm-6
         p Adresse de l'entreprise
-        / p = artisan.addresse if artisan
+        p = artisan.adresse if artisan
+    .row
+      .col-sm-6
+        p Etat de l'entreprise
+        p = artisan.etat if artisan
+      .col-sm-6
+        p Date de création de l'entreprise
+        p = artisan.date_creation if artisan
+    .row
+      .col-sm-6
+        p Activité exercée
+        p = artisan.activite if artisan
+      .col-sm-6
+        p Date de dernière vérification des informations
+        p = artisan.date_verification if artisan
+    .row
+      .col-sm-6
+        p Catégorie juridique
+        p = artisan.categorie if artisan

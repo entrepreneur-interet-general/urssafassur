@@ -11,6 +11,17 @@ class ArtisanContact
 
     company = JSON.parse response.body
 
+    # Gestion du nom de l'entreprise
+    entrepreneur_individuel = company["etablissement"]["uniteLegale"]["categorieJuridiqueUniteLegale"] == "1000"
+
+    name = if entrepreneur_individuel
+      company["etablissement"]["uniteLegale"]["sexeUniteLegale"] + ". " +
+      company["etablissement"]["uniteLegale"]["prenom1UniteLegale"] + " " +
+      company["etablissement"]["uniteLegale"]["nomUniteLegale"]
+    else
+      company["etablissement"]["uniteLegale"]["denominationUniteLegale"]
+    end
+
     adresse = company["etablissement"]["adresseEtablissement"]["numeroVoieEtablissement"] + " " +
               company["etablissement"]["adresseEtablissement"]["typeVoieEtablissement"] + " " +
               company["etablissement"]["adresseEtablissement"]["libelleVoieEtablissement"] + ", " +
@@ -20,7 +31,7 @@ class ArtisanContact
     etat = company["etablissement"]["uniteLegale"]["etatAdministratifUniteLegale"] == "A" ? "Actif" : "Cessée"
 
     ArtisanContact.new(
-      name: company["etablissement"]["uniteLegale"]["denominationUniteLegale"],
+      name: name,
       activite: company["etablissement"]["uniteLegale"]["activitePrincipaleUniteLegale"],
       adresse: adresse,
       etat: etat,

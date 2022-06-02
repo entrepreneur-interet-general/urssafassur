@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_30_092453) do
+ActiveRecord::Schema.define(version: 2022_06_02_120948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 2022_05_30_092453) do
     t.string "siret"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "activite"
+    t.string "adresse"
+    t.string "etat"
+    t.string "categorie"
+    t.string "date_creation"
+    t.string "date_verification"
   end
 
 end
