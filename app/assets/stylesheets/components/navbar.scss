@@ -3,6 +3,21 @@
 }
 
 .navbar-urssafassur .navbar-nav .nav-item a {
-  color: $primary-blue-2;
-  font-family: 'Inter', sans-serif;
+  color: $primary-blue-7;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  line-height: 110%;
+  padding: 0 20px;
+}
+
+.navbar-urssafassur .navbar-nav .nav-item a:visited {
+  color: $primary-blue-7;
+}
+
+@include media-breakpoint-up(sm) {
+  .navbar-urssafassur .navbar-nav .nav-item .active {
+    margin-bottom: -42px;
+    padding-bottom: 2.7rem;
+    border-bottom: 4px solid $primary-blue-7;
+  }
 }
