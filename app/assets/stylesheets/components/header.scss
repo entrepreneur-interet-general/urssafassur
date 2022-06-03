@@ -1,12 +1,13 @@
-.header-urssafassur {
+.upper-header {
   width: 1440px;
-  height: 290px;
+  height: 64px;
+  background-color: $particulier-4;
+  vertical-align: middle;
+  display: table-cell;
 }
 
-.header-urssafassur h1 { 
-  position: absolute;
-  top: 155px;
-  color: white;
-  font-family: 'Inter', sans-serif;
-  font-size: 40px;
+.upper-header p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin-top: 14px;
 }
