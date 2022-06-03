@@ -1,8 +1,8 @@
-.navbar-urssafassur {
+.navbar-verifsiret {
   box-shadow: 0px 4px 20px 0px #0000000D;
 }
 
-.navbar-urssafassur .navbar-nav .nav-item a {
+.navbar-verifsiret .navbar-nav .nav-item a {
   color: $primary-blue-7;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -10,12 +10,12 @@
   padding: 0 20px;
 }
 
-.navbar-urssafassur .navbar-nav .nav-item a:visited {
+.navbar-verifsiret .navbar-nav .nav-item a:visited {
   color: $primary-blue-7;
 }
 
 @include media-breakpoint-up(sm) {
-  .navbar-urssafassur .navbar-nav .nav-item .active {
+  .navbar-verifsiret .navbar-nav .nav-item .active {
     margin-bottom: -42px;
     padding-bottom: 2.7rem;
     border-bottom: 4px solid $primary-blue-7;
