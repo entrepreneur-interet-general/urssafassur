@@ -11,3 +11,46 @@
   font-size: 16px;
   margin-top: 14px;
 }
+
+.header-verifsiret {
+  width: 1440px;
+  height: 428px;
+  top: 164px;
+  background-color: $particulier-2;
+}
+
+.header-verifsiret .title {
+  position: absolute;
+  height: 205px;
+  width: 511px;
+  left: 11%;
+  top: 282px;
+  border-radius: 0px;
+}
+
+.header-verifsiret h1 {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  color: $primary-blue-9;
+  line-height: 42px;
+}
+
+.header-verifsiret p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $primary-blue-10;
+  line-height: 28px;
+}
+
+.header-verifsiret .underline {
+  background-repeat: repeat-x;
+  background-image: url('10x10-ffb79c7f.png');
+  background-position: left 30px;
+}
+
+.header-verifsiret .img {
+  position: relative;
+  left: 56%;
+}

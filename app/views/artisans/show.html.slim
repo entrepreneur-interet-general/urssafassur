@@ -1,10 +1,12 @@
-section.p-5
+header.header-verifsiret.p-5
   .container
     .row
-      .col-sm-4
-      .col-sm-8
-        h2 L'outil Vérification Siret, une aide pour vérifier l'existence d'un prestataire
+      .col-sm-8.title
+        h1 L'outil <span class="underline">Vérification Siret</span>, une aide pour vérifier l'existence d'un prestataire
         p Nous vous aidons à acquérir les bons réflexes pour des prestations à domicile sécurisées. 
+      .col-sm-4.img
+        = image_tag "header_x1.png"
+
 
 section.p-5
   = turbo_frame_tag @new_artisan do |f|
