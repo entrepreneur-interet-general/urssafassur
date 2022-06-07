@@ -1,6 +1,14 @@
-= simple_form_for artisan do |f|
-  = f.input :siret
-  = f.button :submit, "Rechercher", class: "btn btn-primary"
+.container
+  .row
+    .col-sm12
+      h3 Rechercher un siret
+  .row
+    = simple_form_for artisan, wrapper: :inline_form, html: { class: 'form-inline' } do |f|
+      .form-group.col-sm-6.py-3
+        = f.input :siret, label: false, placeholder: "123 456 789 12345", class: "form-control"
+        small.text-muted Numéro à 14 chiffres
+      .form-group.col-sm-4.py-3
+        = f.button :submit, "Vérifier le numéro SIRET", class: "btn btn-verifsiret"
 
   - if artisan.errors[:base].any?
     .error_message

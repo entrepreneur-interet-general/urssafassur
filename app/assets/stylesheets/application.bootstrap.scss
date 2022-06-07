@@ -12,6 +12,10 @@
 @import 'variables/colors';
 
 // Components
+@import 'components/spacing.scss';
+@import 'components/buttons.scss';
+@import 'components/background.scss';
+@import 'components/form.scss';
 @import 'components/navbar';
 @import 'components/header';
 @import 'components/section';
