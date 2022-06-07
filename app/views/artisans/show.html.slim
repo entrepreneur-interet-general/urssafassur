@@ -25,16 +25,16 @@ header.header-verifsiret.p-5
             | Vous pouvez trouver le numéro SIRET d’une entreprise sur les documents de l’entreprise (devis, facture) ainsi
               que sur les éléments de publicité de l’entreprise (site internet, cartes de visite, prospectus).
 
-.background-particulier-1
+.bg-particulier-1
   .margin-left-15
     section.py-5
-      .background-white.bloc-970.rounded
+      .bg-white.card.rounded
         .p-4
           = turbo_frame_tag @new_artisan do |f|
             = render "form", artisan: @new_artisan
 
     section.py-5
-      .background-white.bloc-970.rounded
+      .bg-white.card.rounded
         .p-4
           = turbo_frame_tag @artisan do |f|
             = render "artisan", artisan: @artisan

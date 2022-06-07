@@ -1,7 +1,11 @@
 .container
   .row
     .col-sm12
-      h3 Rechercher un siret
+      .card-title
+        .icon-bg-blue
+          = image_tag "icons/search.svg", class: "filter-primary-1"
+        h3.padding-top-10 Rechercher un siret
+
   .row
     = simple_form_for artisan, wrapper: :inline_form, html: { class: 'form-inline' } do |f|
       .form-group.col-sm-6.py-3
