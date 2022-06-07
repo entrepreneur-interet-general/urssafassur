@@ -10,6 +10,6 @@
   width: 970px;  
 }
 
-.form-inline {
-  display: inline-flex;
+.filter-white {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(79deg) brightness(102%) contrast(102%);
 }

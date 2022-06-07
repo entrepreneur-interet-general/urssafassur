@@ -8,7 +8,9 @@
         = f.input :siret, label: false, placeholder: "123 456 789 12345", class: "form-control"
         small.text-muted Numéro à 14 chiffres
       .form-group.col-sm-4.py-3
-        = f.button :submit, "Vérifier le numéro SIRET", class: "btn btn-verifsiret"
+        = f.button :button, class: "btn btn-verifsiret" do
+          label.px-2 Vérifier le numéro SIRET
+          = image_tag "icons/arrow-xl-right.svg", class: "filter-white"
 
   - if artisan.errors[:base].any?
     .error_message
