@@ -28,13 +28,13 @@ header.header-verifsiret.p-5
 .bg-particulier-1
   .margin-left-15
     section.py-5
-      .bg-white.card.rounded
+      .card.rounded
         .p-4
           = turbo_frame_tag @new_artisan do |f|
             = render "form", artisan: @new_artisan
 
     section.py-5
-      .bg-white.card.rounded
+      .card.rounded
         .p-4
           = turbo_frame_tag @artisan do |f|
             = render "artisan", artisan: @artisan
