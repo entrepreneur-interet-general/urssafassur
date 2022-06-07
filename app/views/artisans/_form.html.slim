@@ -1,6 +1,6 @@
 .container
   .row
-    .col-sm12
+    .col-sm-12
       .card-title
         .icon-bg-blue
           = image_tag "icons/search.svg", class: "filter-primary-1"
@@ -17,5 +17,13 @@
           = image_tag "icons/arrow-xl-right.svg", class: "filter-white"
 
   - if artisan.errors[:base].any?
-    .error_message
+    .error_message.invalid-feedback
       = artisan.errors.full_messages_for(:base).to_sentence
+
+  .row
+    .col-sm-12
+      .alert.alert-primary-1.my-3
+        .padding-right-15
+          = image_tag "icons/return.svg", class: "filter-primary-1"
+        p
+          | <b>À savoir :</b> Nous ne collectons pas de données individuelles à partir des résultats de recherche.
