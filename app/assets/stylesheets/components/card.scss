@@ -7,3 +7,30 @@
   display: flex;
   align-items: center;
 }
+
+.card_grey {
+  width: 360px;
+  min-height: 64px;
+  background-color: $grey-2;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card_grey p {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 0;
+
+}
+
+.card_grey .small {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}

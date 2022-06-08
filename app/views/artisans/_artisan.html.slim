@@ -11,26 +11,33 @@
         h3 Fiche d'identité de l'entreprise
     .row
       .col-sm-6
-        p Nom de l'entreprise
-        p = artisan.name if artisan
+        .card.card_grey
+          p.small Nom de l'entreprise
+          p = artisan.name if artisan
       .col-sm-6
-        p Adresse de l'entreprise
-        p = artisan.adresse if artisan
+        .card.card_grey
+          p.small Adresse de l'entreprise
+          p = artisan.adresse if artisan
     .row
       .col-sm-6
-        p Etat de l'entreprise
-        p = artisan.etat if artisan
+        .card.card_grey
+          p.small Etat de l'entreprise
+          p = artisan.etat if artisan
       .col-sm-6
-        p Date de création de l'entreprise
-        p = artisan.date_creation if artisan
+        .card.card_grey
+          p.small Date de création de l'entreprise
+          p = artisan.date_creation if artisan
     .row
       .col-sm-6
-        p Activité exercée
-        p = artisan.activite if artisan
+        .card.card_grey
+          p.small Activité exercée
+          p = artisan.activite if artisan
       .col-sm-6
-        p Date de dernière vérification des informations
-        p = artisan.date_verification if artisan
+        .card.card_grey
+          p.small Date de dernière vérification des informations
+          p = artisan.date_verification if artisan
     .row
       .col-sm-6
-        p Catégorie juridique
-        p = artisan.categorie if artisan
+        .card.card_grey
+          p.small Catégorie juridique
+          p = artisan.categorie if artisan

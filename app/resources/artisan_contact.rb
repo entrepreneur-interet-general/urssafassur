@@ -33,7 +33,7 @@ class ArtisanContact
     ArtisanContact.new(
       name: name,
       activite: company["etablissement"]["uniteLegale"]["activitePrincipaleUniteLegale"],
-      adresse: adresse,
+      adresse: adresse.titleize,
       etat: etat,
       categorie: company["etablissement"]["uniteLegale"]["categorieEntreprise"],
       date_creation: company["etablissement"]["dateCreationEtablissement"],
