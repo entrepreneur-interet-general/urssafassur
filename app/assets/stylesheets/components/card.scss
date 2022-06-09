@@ -1,11 +1,16 @@
 .card {
-  width: 970px;
+  width: 936px;
   border: none;
 }
 
 .card-title {
   display: flex;
   align-items: center;
+}
+
+.card-title p {
+  font-size: 20px;
+  line-height: 32px;
 }
 
 .card_grey {

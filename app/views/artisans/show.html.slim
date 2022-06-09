@@ -38,3 +38,13 @@ header.header-verifsiret.p-5
         .p-4
           = turbo_frame_tag @artisan do |f|
             = render "artisan", artisan: @artisan
+
+.margin-left-15
+  section.py-5
+    .card.rounded.bg-primary-1.p-4
+      .card-title
+        .icon-bg-particulier-3
+          = image_tag "icons/secure.svg", class: "filter-primary-1 icon-50"
+        .p-3.margin-top-10
+          h3 Comparer les informations de cette page avec celles que vous avez du prestataire.
+          p Les informations sont-elles semblables ?
