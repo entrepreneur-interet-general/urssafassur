@@ -10,9 +10,13 @@
 // Variables
 @import 'variables/colors';
 
+// Default
+@import 'default/typography.scss';
+
 // Components
 @import 'components/spacing.scss';
 @import 'components/icons.scss';
+@import 'components/list.scss';
 @import 'components/alert.scss';
 @import 'components/card.scss';
 @import 'components/buttons.scss';
