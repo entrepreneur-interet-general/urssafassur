@@ -1,0 +1,21 @@
+footer .upper-footer {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+footer .upper-footer h4 {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: $primary-blue-7 !important;
+}
+
+footer .upper-footer a {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 16px;
+  color: $primary-blue-7;
+  text-decoration: none;
+}
