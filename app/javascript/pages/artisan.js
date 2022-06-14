@@ -3,7 +3,8 @@ const btnSameInfo = document.querySelector('#same-infos');
 const differentInfosDiv = document.querySelector('#different-infos-div');
 
 function displayDifferentInfosDiv(event){
-  differentInfosDiv.classList.remove("d-none");
+  differentInfosDiv.classList.remove("d-none")
+  differentInfosDiv.scrollIntoView();
 }
 
 function hideDifferentInfosDiv(event){
