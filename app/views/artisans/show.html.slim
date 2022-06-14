@@ -7,53 +7,50 @@ header.header-verifsiret.p-5
       .col-sm-4.img
         = image_tag "header_x1.png"
 
-.margin-left-10
-  section.py-5
-    .container
-      .row
-        .col-sm-12
-          h2 Vérifier l'existence d'un prestataire
-          hr
-        .col-sm-12.content
-          h3.py-3 À quoi sert un numéro Siret ?
-          p
-            | Le numéro SIRET est un code à 14 chiffres permettant de répertorier les entreprises existantes sur le territoire
-              français. Il est attribué par le CFE (Centre de Formalités des Entreprises) lors de la création de l’entreprise.
-              .col-sm-12.content
-          h3.py-3 Où trouver ce numéro ?
-          p
-            | Vous pouvez trouver le numéro SIRET d’une entreprise sur les documents de l’entreprise (devis, facture) ainsi
-              que sur les éléments de publicité de l’entreprise (site internet, cartes de visite, prospectus).
+section.py-5.margin-left-10
+  .container
+    .row
+      .col-sm-12
+        h2 Vérifier l'existence d'un prestataire
+        hr
+      .col-sm-12.content
+        h3.py-3 À quoi sert un numéro Siret ?
+        p
+          | Le numéro SIRET est un code à 14 chiffres permettant de répertorier les entreprises existantes sur le territoire
+            français. Il est attribué par le CFE (Centre de Formalités des Entreprises) lors de la création de l’entreprise.
+            .col-sm-12.content
+        h3.py-3 Où trouver ce numéro ?
+        p
+          | Vous pouvez trouver le numéro SIRET d’une entreprise sur les documents de l’entreprise (devis, facture) ainsi
+            que sur les éléments de publicité de l’entreprise (site internet, cartes de visite, prospectus).
 
 .bg-particulier-1
-  .margin-left-15
-    section.py-5
-      .card.rounded
-        .p-4
-          = turbo_frame_tag @new_artisan do |f|
-            = render "form", artisan: @new_artisan
+  section.py-5.margin-left-15
+    .card.rounded
+      .p-4
+        = turbo_frame_tag @new_artisan do |f|
+          = render "form", artisan: @new_artisan
 
-    section.py-5
-      .card.rounded
-        .p-4
-          = turbo_frame_tag @artisan do |f|
-            = render "artisan", artisan: @artisan
+  section.py-5.margin-left-15
+    .card.rounded
+      .p-4
+        = turbo_frame_tag @artisan do |f|
+          = render "artisan", artisan: @artisan
 
-.margin-left-15
-  section.py-5
-    .card.rounded.bg-primary-1.p-5
-      .d-flex
-        .icon-bg-particulier-3
-          = image_tag "icons/secure.svg", class: "filter-primary-1 icon-50"
-        .margin-left-5
-          h3 Comparer les informations de cette page avec celles que vous avez du prestataire.
-          p Les informations sont-elles semblables ?
-          .pt-3
-            button.btn.btn-outline-warning Oui ce sont les mêmes
-            button.btn.btn-outline-warning.margin-left-5 Non, les informations sont différentes
+section.py-5.margin-left-15
+  .card.rounded.bg-primary-1.p-5
+    .d-flex
+      .icon-bg-particulier-3
+        = image_tag "icons/secure.svg", class: "filter-primary-1 icon-50"
+      .margin-left-5
+        h3 Comparer les informations de cette page avec celles que vous avez du prestataire.
+        p Les informations sont-elles semblables ?
+        .pt-3
+          button.btn.btn-outline-warning#same-infos Oui ce sont les mêmes
+          button.btn.btn-outline-warning.margin-left-5#different-infos Non, les informations sont différentes
 
-.margin-left-15
-  section.py-5
+#different-infos-div.d-none
+  section.py-5.margin-left-15
     .card.rounded.bg-alert-info-2.p-5.alert
       .d-flex
         = image_tag "icons/info-mark-circled.svg", class: "filter-alert-info-5"
@@ -78,7 +75,7 @@ header.header-verifsiret.p-5
         li.list-group-item
           | Les informations partagées par le prestataire ne correspondent pas à sa situation.
 
-  section.py-5
+  section.py-5.margin-left-15
     h3 Questions à poser au prestataire pressenti
     p.pt-1 Nous vous recommandons de poser les questions suivantes selon votre cas :
     ul.list-group
