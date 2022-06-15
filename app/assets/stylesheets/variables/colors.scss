@@ -12,6 +12,8 @@ $particulier-3: #FFB79C;
 $particulier-4: #FF9B75;
 $particulier-5: #FF703A;
 
+$base-ternary-4: #FFD400;
+
 $typo-blue-01: #0058A3;
 
 $alert-info-2: #FFF5B8;
@@ -27,6 +29,10 @@ $grey-7: #212529;
 
 .filter-primary-1 {
   filter: invert(21%) sepia(61%) saturate(1549%) hue-rotate(197deg) brightness(95%) contrast(96%);
+}
+
+.filter-primary-7 {
+  filter: invert(15%) sepia(90%) saturate(1882%) hue-rotate(210deg) brightness(98%) contrast(88%);
 }
 
 .filter-alert-info-5 {

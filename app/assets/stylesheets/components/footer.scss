@@ -19,3 +19,51 @@ footer .upper-footer a {
   color: $primary-blue-7;
   text-decoration: none;
 }
+
+footer .upper-footer a:hover {
+  text-decoration: underline;
+}
+
+
+footer .lower-footer {
+  min-height: 500px;
+}
+
+footer .lower-footer h4 {
+  font-family: Sarabun, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 20px;
+  color: $primary-blue-7;
+  margin-bottom: 24px;
+}
+
+footer .lower-footer h4:after {
+  content: "";
+  border-bottom: 3px solid $base-ternary-4;
+  width: 48px;
+  display: block;
+  margin-top: 25px;
+}
+
+footer .lower-footer a {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $primary-blue-7;
+  text-decoration: none;
+}
+
+footer .lower-footer a:hover {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $primary-blue-2;
+  text-decoration: underline;
+}
+
+footer .upper-footer .footer-icon {
+  margin-top: -0.4rem;
+}

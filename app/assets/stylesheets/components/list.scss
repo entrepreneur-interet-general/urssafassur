@@ -1,18 +1,19 @@
 .list-group-item {
   background-color: transparent;
   border: none;
+  padding: 0.2rem 0;
 }  
 
-.list-group-item::before {
+.reasons .list-group-item::before {
   content: "●";
-  color: $particulier-3;
+  color: $alert-info-5;
   display: inline-block;
   margin-inline-end: 10px;
 }
 
-.alert * .list-group-item::before {
-    content: "●";
-    color: $alert-info-5;
-    display: inline-block;
-    margin-inline-end: 10px;
+.questions .list-group-item::before {
+  content: "●";
+  color: $particulier-3;
+  display: inline-block;
+  margin-inline-end: 10px;
 }
