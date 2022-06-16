@@ -7,11 +7,12 @@ section h2 {
   color: $primary-blue-7;
 }
 
-section hr {
-  color: $particulier-5;
-  height: 5px !important;
-  width: 45px;
-  opacity: 1;
+section h2:after {
+  content: "";
+  border-bottom: 5px solid $particulier-5;
+  width: 48px;
+  display: block;
+  margin-top: 20px;
 }
 
 section p {
@@ -19,8 +20,5 @@ section p {
   font-size: 16px;
   font-weight: 400;
   line-height: 27px;
-  letter-spacing: 0px;
-  text-align: left;
   color: $grey-6;
-  margin-right: 25%;
 }
