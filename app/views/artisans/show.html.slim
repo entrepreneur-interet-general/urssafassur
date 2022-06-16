@@ -34,11 +34,13 @@ section.py-5
             = turbo_frame_tag @new_artisan do |f|
               = render "form", artisan: @new_artisan
 
-  section.py-5.margin-left-15
-    .card.rounded
-      .p-4
-        = turbo_frame_tag @artisan do |f|
-          = render "artisan", artisan: @artisan
+  section.py-5
+    .container
+      .row
+        .col-xs-12.col-sm-10.offset-sm-1
+          .card.rounded.p-4
+            = turbo_frame_tag @artisan do |f|
+              = render "artisan", artisan: @artisan
 
 section.py-5.margin-left-15
   .card.rounded.bg-primary-1.p-5

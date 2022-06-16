@@ -1,43 +1,43 @@
 #artisan
-  .container
+  .row
+    .col
+      .d-flex
+        .icon-bg-blue
+          = image_tag "icons/map-france.svg", class: "filter-primary-1"
+        h3.padding-top-10 Résultat
+  .mx-0.mx-sm-4
     .row
-      .col-sm-12
-        .d-flex
-          .icon-bg-blue
-            = image_tag "icons/map-france.svg", class: "filter-primary-1"
-          h3.padding-top-10 Résultat
-
-      .col-sm-12.py-3
+      .col.py-3
         h3 Fiche d'identité de l'entreprise
-    .row
-      .col-sm-6
-        .card.card_grey
-          p.small Nom de l'entreprise
-          p = artisan.name if artisan
-      .col-sm-6
-        .card.card_grey
-          p.small Adresse de l'entreprise
-          p = artisan.adresse if artisan
-    .row
-      .col-sm-6
-        .card.card_grey
-          p.small Etat de l'entreprise
-          p = artisan.etat if artisan
-      .col-sm-6
-        .card.card_grey
-          p.small Date de création de l'entreprise
-          p = artisan.date_creation if artisan
-    .row
-      .col-sm-6
-        .card.card_grey
-          p.small Activité exercée
-          p = artisan.activite if artisan
-      .col-sm-6
-        .card.card_grey
-          p.small Date de dernière vérification des informations
-          p = artisan.date_verification if artisan
-    .row
-      .col-sm-6
-        .card.card_grey
-          p.small Catégorie juridique
-          p = artisan.categorie if artisan
+  .row
+    .col-sm-6
+      .card.card_grey
+        p.small Nom de l'entreprise
+        p = artisan.name if artisan
+    .col-sm-6
+      .card.card_grey
+        p.small Adresse de l'entreprise
+        p = artisan.adresse if artisan
+  .row
+    .col-sm-6
+      .card.card_grey
+        p.small Etat de l'entreprise
+        p = artisan.etat if artisan
+    .col-sm-6
+      .card.card_grey
+        p.small Date de création de l'entreprise
+        p = artisan.date_creation if artisan
+  .row
+    .col-sm-6
+      .card.card_grey
+        p.small Activité exercée
+        p = artisan.activite if artisan
+    .col-sm-6
+      .card.card_grey
+        p.small Date de dernière vérification des informations
+        p = artisan.date_verification if artisan
+  .row
+    .col-sm-6
+      .card.card_grey
+        p.small Catégorie juridique
+        p = artisan.categorie if artisan
