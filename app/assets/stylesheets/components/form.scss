@@ -1,9 +1,9 @@
-
-.form-inline {
-  display: inline-flex;
-}
-
 input[type="text"] {
   height: 52px;
-  width: 360px;
+}
+
+@include media-breakpoint-up(sm) {
+  .form-inline {
+    display: inline-flex;
+  }
 }
