@@ -51,43 +51,45 @@ section#comparaison-infos.py-5
               button.btn.btn-outline-warning.margin-left-5#different-infos Non, les informations sont différentes
 
   #different-infos-div.d-none
-    .py-5.margin-left-15
-      .card.rounded.bg-alert-info-2.p-5.alert
-        .d-flex
-          = image_tag "icons/info-mark-circled.svg", class: "filter-alert-info-5"
-          .ps-2.pt-2
-            h4 Certaines informations sont différentes
-        p.py-2
-          | Les informations affichées ne correspondent pas à celles partagées par votre prestataire
-          |  de travaux, c’est un point qui peut être défavorable pour l’exécution de la prestation.
-        p Voici des raisons possibles :
-        ul.list-group.reasons
-          li.list-group-item
-            | S’il n’y a pas d’information affichée, le numéro Siret n’est pas attribué.
-          li.list-group-item
-            | Pour les prestataires au statut d’auto-entreprise, le nom de l’entreprise est le nom et prénom de
-            |  l’auto-entrepreneur.
-            | <br>L’auto-entrepreneur peut avoir une dénomination commerciale non éponyme auprès de sa clientèle.
-          li.list-group-item
-            | Si l’activité du prestataire est très récente, ce dernier peut être en cours d’immatriculation
-            |  et ne pas avoir son Siret référencé.
-          li.list-group-item
-            | La catégorie juridique affichée est différente de celle énoncée ou présente sur le devis du prestataire.
-          li.list-group-item
-            | Les informations partagées par le prestataire ne correspondent pas à sa situation.
-
-    .py-5.margin-left-15
-      h3 Questions à poser au prestataire pressenti
-      p.pt-1 Nous vous recommandons de poser les questions suivantes selon votre cas :
-      ul.list-group.questions
-        li.list-group-item
-          | Pouvez-vous me partager votre numéro SIRET actif ?
-        li.list-group-item
-          | Depuis combien de temps avez-vous créé votre entreprise ?
-        li.list-group-item
-          | Quelles sont vos activités professionnelles ? Pourquoi sont-elles différentes de celles référencées ?
-        li.list-group-item
-          | Quel est le statut juridique de votre société ? Pourquoi les informations ne concordent pas ?
+    .container
+      .row
+        .col-xs-12.col-sm-10.offset-sm-1.pt-5
+          .card.rounded.bg-alert-info-2.p-5.alert
+            .d-flex
+              = image_tag "icons/info-mark-circled.svg", class: "filter-alert-info-5"
+              .ps-2.pt-2
+                h4 Certaines informations sont différentes
+            p.py-4.py-md-2
+              | Les informations affichées ne correspondent pas à celles partagées par votre prestataire
+              |  de travaux, c’est un point qui peut être défavorable pour l’exécution de la prestation.
+            p Voici des raisons possibles :
+            ul.list-group.reasons
+              li.list-group-item
+                | S’il n’y a pas d’information affichée, le numéro Siret n’est pas attribué.
+              li.list-group-item
+                | Pour les prestataires au statut d’auto-entreprise, le nom de l’entreprise est le nom et prénom de
+                |  l’auto-entrepreneur.
+                | <br>L’auto-entrepreneur peut avoir une dénomination commerciale non éponyme auprès de sa clientèle.
+              li.list-group-item
+                | Si l’activité du prestataire est très récente, ce dernier peut être en cours d’immatriculation
+                |  et ne pas avoir son Siret référencé.
+              li.list-group-item
+                | La catégorie juridique affichée est différente de celle énoncée ou présente sur le devis du prestataire.
+              li.list-group-item
+                | Les informations partagées par le prestataire ne correspondent pas à sa situation.
+      .row
+        .col-xs-12.col-sm-10.offset-sm-1.pt-5
+          h3 Questions à poser au prestataire pressenti
+          p.pt-1 Nous vous recommandons de poser les questions suivantes selon votre cas :
+          ul.list-group.questions
+            li.list-group-item
+              | Pouvez-vous me partager votre numéro SIRET actif ?
+            li.list-group-item
+              | Depuis combien de temps avez-vous créé votre entreprise ?
+            li.list-group-item
+              | Quelles sont vos activités professionnelles ? Pourquoi sont-elles différentes de celles référencées ?
+            li.list-group-item
+              | Quel est le statut juridique de votre société ? Pourquoi les informations ne concordent pas ?
 
 footer
   .upper-footer.bg-primary-2
