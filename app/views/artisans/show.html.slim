@@ -8,14 +8,14 @@ header.bg-particulier-2
         .col-sm-4.img
           = image_tag "header_x1.png"
 
-section.py-5
+section#pourquoi-verifier-siret.py-5
   .container
     .row
       .col-xs-12.col-sm-10.offset-sm-1
         = render "why_verify_siret"
 
 .bg-particulier-1
-  section.py-5
+  section#verifier-siret.py-5
     .container
       .row
         .col-xs-12.col-sm-10.offset-sm-1
@@ -23,7 +23,7 @@ section.py-5
             = turbo_frame_tag @new_artisan do |f|
               = render "form", artisan: @new_artisan
 
-  section.py-5
+  section#infos-artisan.py-5
     .container
       .row
         .col-xs-12.col-sm-10.offset-sm-1
@@ -31,56 +31,63 @@ section.py-5
             = turbo_frame_tag @artisan do |f|
               = render "artisan", artisan: @artisan
 
-section.py-5.margin-left-15
-  .card.rounded.bg-primary-1.p-5
-    .d-flex
-      .icon-bg-particulier-3
-        = image_tag "icons/secure.svg", class: "filter-primary-1 icon-50"
-      .margin-left-5
-        h3 Comparer les informations de cette page avec celles que vous avez du prestataire.
-        p Les informations sont-elles semblables ?
-        .pt-3
-          button.btn.btn-outline-warning#same-infos Oui ce sont les mêmes
-          button.btn.btn-outline-warning.margin-left-5#different-infos Non, les informations sont différentes
+section#comparaison-infos.py-5
+  .container
+    .row
+      .col-xs-12.col-sm-10.offset-sm-1
+        .card.rounded.bg-primary-1.p-4
+          .row
+            .d-flex
+              .icon-bg-particulier-3
+                = image_tag "icons/secure.svg", class: "filter-primary-1 icon-50"
+              .ms-0.ms-md-4.pt-md-2.pt-lg-4
+                h3 Comparer les informations de cette page avec celles que vous avez du prestataire.
+                p Les informations sont-elles semblables ?
+          .row
+            .col-lg-2
+            .col-xs-12.col-sm-6.col-lg-4.text-center.text-lg-start.my-2
+              button.btn.btn-outline-warning#same-infos Oui ce sont les mêmes
+            .col-xs-12.col-sm-6.col-lg-6.my-2
+              button.btn.btn-outline-warning.margin-left-5#different-infos Non, les informations sont différentes
 
-#different-infos-div.d-none
-  section.py-5.margin-left-15
-    .card.rounded.bg-alert-info-2.p-5.alert
-      .d-flex
-        = image_tag "icons/info-mark-circled.svg", class: "filter-alert-info-5"
-        .ps-2.pt-2
-          h4 Certaines informations sont différentes
-      p.py-2
-        | Les informations affichées ne correspondent pas à celles partagées par votre prestataire 
-        | de travaux, c’est un point qui peut être défavorable pour l’exécution de la prestation.
-      p Voici des raisons possibles :
-      ul.list-group.reasons
-        li.list-group-item
-          | S’il n’y a pas d’information affichée, le numéro Siret n’est pas attribué.
-        li.list-group-item
-          | Pour les prestataires au statut d’auto-entreprise, le nom de l’entreprise est le nom et prénom de 
-          | l’auto-entrepreneur.
-          | <br>L’auto-entrepreneur peut avoir une dénomination commerciale non éponyme auprès de sa clientèle.
-        li.list-group-item
-          | Si l’activité du prestataire est très récente, ce dernier peut être en cours d’immatriculation 
-          | et ne pas avoir son Siret référencé.
-        li.list-group-item
-          | La catégorie juridique affichée est différente de celle énoncée ou présente sur le devis du prestataire.
-        li.list-group-item
-          | Les informations partagées par le prestataire ne correspondent pas à sa situation.
+  #different-infos-div.d-none
+    .py-5.margin-left-15
+      .card.rounded.bg-alert-info-2.p-5.alert
+        .d-flex
+          = image_tag "icons/info-mark-circled.svg", class: "filter-alert-info-5"
+          .ps-2.pt-2
+            h4 Certaines informations sont différentes
+        p.py-2
+          | Les informations affichées ne correspondent pas à celles partagées par votre prestataire
+          |  de travaux, c’est un point qui peut être défavorable pour l’exécution de la prestation.
+        p Voici des raisons possibles :
+        ul.list-group.reasons
+          li.list-group-item
+            | S’il n’y a pas d’information affichée, le numéro Siret n’est pas attribué.
+          li.list-group-item
+            | Pour les prestataires au statut d’auto-entreprise, le nom de l’entreprise est le nom et prénom de
+            |  l’auto-entrepreneur.
+            | <br>L’auto-entrepreneur peut avoir une dénomination commerciale non éponyme auprès de sa clientèle.
+          li.list-group-item
+            | Si l’activité du prestataire est très récente, ce dernier peut être en cours d’immatriculation
+            |  et ne pas avoir son Siret référencé.
+          li.list-group-item
+            | La catégorie juridique affichée est différente de celle énoncée ou présente sur le devis du prestataire.
+          li.list-group-item
+            | Les informations partagées par le prestataire ne correspondent pas à sa situation.
 
-  section.py-5.margin-left-15
-    h3 Questions à poser au prestataire pressenti
-    p.pt-1 Nous vous recommandons de poser les questions suivantes selon votre cas :
-    ul.list-group.questions
-      li.list-group-item
-        | Pouvez-vous me partager votre numéro SIRET actif ?
-      li.list-group-item
-        | Depuis combien de temps avez-vous créé votre entreprise ?
-      li.list-group-item
-        | Quelles sont vos activités professionnelles ? Pourquoi sont-elles différentes de celles référencées ?
-      li.list-group-item
-        | Quel est le statut juridique de votre société ? Pourquoi les informations ne concordent pas ?
+    .py-5.margin-left-15
+      h3 Questions à poser au prestataire pressenti
+      p.pt-1 Nous vous recommandons de poser les questions suivantes selon votre cas :
+      ul.list-group.questions
+        li.list-group-item
+          | Pouvez-vous me partager votre numéro SIRET actif ?
+        li.list-group-item
+          | Depuis combien de temps avez-vous créé votre entreprise ?
+        li.list-group-item
+          | Quelles sont vos activités professionnelles ? Pourquoi sont-elles différentes de celles référencées ?
+        li.list-group-item
+          | Quel est le statut juridique de votre société ? Pourquoi les informations ne concordent pas ?
 
 footer
   .upper-footer.bg-primary-2
