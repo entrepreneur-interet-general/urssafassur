@@ -10,6 +10,9 @@
     .col-sm-6.col-md-4.py-3.mx-0.mx-sm-4
       .form-group
         = f.input :siret, label: false, placeholder: "123 456 789 12345"
+        - if artisan.errors[:base].any?
+          .error_message
+            p = artisan.errors.full_messages_for(:base).to_sentence
         small.text-muted Numéro à 14 chiffres
     .col-sm-6.col-md-8.py-3.mx-3
       .form-group
@@ -17,9 +20,6 @@
           label.px-2 Vérifier le numéro SIRET
           = image_tag "icons/arrow-xl-right.svg", class: "filter-white"
 
-- if artisan.errors[:base].any?
-  .error_message.invalid-feedback
-    = artisan.errors.full_messages_for(:base).to_sentence
 
 .row
   .col-sm-12

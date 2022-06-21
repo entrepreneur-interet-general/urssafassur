@@ -10,6 +10,6 @@ class Artisan < ApplicationRecord
   end
 
   def check_siret
-    self.siret.present? || self.siret == 14
+    self.siret.present? && self.siret.length == 14
   end
 end
