@@ -11,26 +11,8 @@ class ArtisansController < ApplicationController
       ]
     else
       render turbo_stream: [
-        turbo_stream.replace("new_artisan", partial: "form", locals: { artisan: @artisan }),
         turbo_stream.replace("artisan", partial: "artisan", locals: { artisan: nil }),
-      ]
-    end
-  end
-
-  def update
-    @artisan = Artisan.find_by(siret: artisan_params[:siret])
-
-    if @artisan.update artisan_params
-      update_artisan_with_sirene_api(siret: artisan_params[:siret])
-
-      render turbo_stream: [
-        turbo_stream.replace("artisan", partial: "artisan", locals: { artisan: @artisan }),
-        turbo_stream.replace("new_artisan", partial: "form", locals: { artisan: @artisan })
-      ]
-    else
-      render turbo_stream: [
         turbo_stream.replace("new_artisan", partial: "form", locals: { artisan: @artisan }),
-        turbo_stream.replace("artisan", partial: "artisan", locals: { artisan: nil }),
       ]
     end
   end
