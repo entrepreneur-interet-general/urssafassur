@@ -19,6 +19,9 @@ $typo-blue-01: #0058A3;
 $alert-info-2: #FFF5B8;
 $alert-info-5: #D3AA00;
 
+$alert-success-1 : #DCFCDE;
+$alert-success-5: #3CB053;
+
 $grey-2: #E6E9EC;
 $grey-6: #495057;
 $grey-7: #212529;
@@ -37,4 +40,8 @@ $grey-7: #212529;
 
 .filter-alert-info-5 {
   filter: invert(51%) sepia(99%) saturate(423%) hue-rotate(11deg) brightness(104%) contrast(102%);
+}
+
+.filter-alert-success-5 {
+  filter: invert(55%) sepia(57%) saturate(472%) hue-rotate(80deg) brightness(92%) contrast(97%);
 }

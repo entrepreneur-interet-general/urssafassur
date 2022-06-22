@@ -16,6 +16,17 @@
           .col-xs-12.col-sm-6.col-lg-6.my-2
             button.btn.btn-outline-warning.margin-left-5#different-infos Non, les informations sont différentes
 
+#same-infos-div
+  .container
+    .row
+      .col-xs-12.col-sm-10.offset-sm-1.pt-5
+        .card.rounded.bg-alert-success-1.p-4.alert
+          .d-flex
+            = image_tag "icons/check-circle.svg", class: "filter-alert-success-5"
+            .ps-4.pt-2
+              h4.text-black Les informations correspondent à celles que vous a données votre prestataire
+          p.pt-4 C'est un point favorable pour l'exécution de la prestation.
+
 #different-infos-div.d-none
   .container
     .row
