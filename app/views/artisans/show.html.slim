@@ -20,19 +20,34 @@ section#pourquoi-verifier-siret.py-5
       .row
         .col-xs-12.col-sm-10.offset-sm-1
           .card.rounded.p-4
-            = turbo_frame_tag @new_artisan do |f|
-              = render "form", artisan: @new_artisan
+            .row
+              .col-sm-12
+                .d-flex
+                  .icon-bg-blue
+                    = image_tag "icons/search.svg", class: "filter-primary-1"
+                  h3.padding-top-10 Rechercher un siret
+            .row
+              = turbo_frame_tag "siret_form" do |f|
+                = render "artisan_form", artisan: @new_artisan
+            .row
+              .col-sm-12
+                .alert.bg-primary-1.my-3.d-flex.mx-0.mx-sm-4
+                  .padding-right-15
+                    = image_tag "icons/return.svg", class: "filter-primary-1"
+                  p
+                    | <b>À savoir :</b> Nous ne collectons pas de données individuelles à partir des résultats de recherche.
 
   section#infos-artisan.py-5
     .container
       .row
         .col-xs-12.col-sm-10.offset-sm-1
           .card.rounded.p-4
-            = turbo_frame_tag @artisan do |f|
-              = render "artisan", artisan: @artisan
+            = turbo_frame_tag "display_artisan" do |f|
+              = render "artisan", artisan: @new_artisan
 
-section#comparaison-infos.py-5
-  = render "verifier_infos"
+= turbo_frame_tag @artisan do |f|
+  section#comparaison-infos.py-5
+    = render "verifier_infos"
 
 footer
   = render "footer"

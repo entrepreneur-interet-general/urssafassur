@@ -1,18 +1,20 @@
 class ArtisansController < ApplicationController
   def create
-    @artisan = Artisan.create(artisan_params)
+    # @artisan = Artisan.new(artisan_params)
+    # new_artisan = Artisan.new(artisan_params)
+    artisan_to_check = Artisan.new(artisan_params)
 
-    if @artisan.save
-      update_artisan_with_sirene_api(siret: artisan_params[:siret])
-
+    if artisan_to_check.valid?
+      artisan_to_display = create_artisan_with_sirene_api(siret: artisan_params[:siret])
+   
       render turbo_stream: [
-        turbo_stream.replace("artisan", partial: "artisan", locals: { artisan: @artisan }),
-        turbo_stream.replace("new_artisan", partial: "form", locals: { artisan: @artisan })
+        turbo_stream.replace("display_artisan", partial: "artisan", locals: { artisan: artisan_to_display }),
+        turbo_stream.replace("new_artisan", partial: "artisan_form", locals: { artisan: Artisan.new })
       ]
     else
       render turbo_stream: [
-        turbo_stream.replace("artisan", partial: "artisan", locals: { artisan: nil }),
-        turbo_stream.replace("new_artisan", partial: "form", locals: { artisan: @artisan }),
+        turbo_stream.remove("display_artisan", partial: "artisan", locals: { artisan: nil }),
+        turbo_stream.replace("new_artisan", partial: "artisan_form", locals: { artisan: artisan_to_display }),
       ]
     end
   end
@@ -23,10 +25,10 @@ class ArtisansController < ApplicationController
 
   private
 
-  def update_artisan_with_sirene_api(siret:)
+  def create_artisan_with_sirene_api(siret:)
     find_artisan = ArtisanContact.get(siret: siret)
 
-    @artisan.update(
+    Artisan.create(
       name: find_artisan.name,
       activite: find_artisan.activite,
       adresse: find_artisan.adresse,
