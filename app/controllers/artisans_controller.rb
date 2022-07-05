@@ -1,7 +1,5 @@
 class ArtisansController < ApplicationController
   def create
-    # @artisan = Artisan.new(artisan_params)
-    # new_artisan = Artisan.new(artisan_params)
     artisan_to_check = Artisan.new(artisan_params)
 
     if artisan_to_check.valid?
@@ -9,12 +7,12 @@ class ArtisansController < ApplicationController
    
       render turbo_stream: [
         turbo_stream.replace("display_artisan", partial: "artisan", locals: { artisan: artisan_to_display }),
-        turbo_stream.replace("new_artisan", partial: "artisan_form", locals: { artisan: Artisan.new })
+        turbo_stream.replace("siret_form", partial: "artisan_form", locals: { artisan: Artisan.new })
       ]
     else
       render turbo_stream: [
-        turbo_stream.remove("display_artisan", partial: "artisan", locals: { artisan: nil }),
-        turbo_stream.replace("new_artisan", partial: "artisan_form", locals: { artisan: artisan_to_display }),
+        turbo_stream.replace("display_artisan", partial: "artisan", locals: { artisan: artisan_to_check }),
+        turbo_stream.replace("siret_form", partial: "artisan_form", locals: { artisan: Artisan.new }),
       ]
     end
   end
