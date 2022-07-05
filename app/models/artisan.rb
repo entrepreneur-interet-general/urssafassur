@@ -6,7 +6,8 @@ class Artisan < ApplicationRecord
   def entreprise_diffusible
     artisan = ArtisanContact.get(siret: self.siret)
 
-    errors.add(:base, "L'entreprise n'est pas diffusable") if artisan == "L'entreprise n'est pas diffusable"
+    error_message = "L’identification de l’établissement immatriculé est valide mais ses données ne peuvent être diffusées publiquement."
+    errors.add(:base, error_message) if artisan == "L'entreprise n'est pas diffusable"
   end
 
   def check_siret

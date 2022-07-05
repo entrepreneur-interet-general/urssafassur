@@ -1,47 +1,56 @@
 - if artisan
-  - if artisan.errors.any?
-    .error_message
-      p = artisan.errors.full_messages.to_sentence
+  - display_artisan_title = artisan.siret.present? ? "Résultat pour #{ artisan.siret.gsub(/(.{3})/, '\1 ') }" : "Résultat"
   #artisan
     .row
       .col
         .d-flex
           .icon-bg-blue
             = image_tag "icons/map-france.svg", class: "filter-primary-1"
-          h3.padding-top-10 = "Résultat pour #{ artisan.siret }"
+          h3.padding-top-10 = display_artisan_title
     .mx-0.mx-sm-4
       .row
         .col.py-3
           h3 Fiche d'identité de l'entreprise
-    .row
-      .col-sm-6
-        .card.card_grey
-          p.small Nom de l'entreprise
-          p = artisan.name
-      .col-sm-6
-        .card.card_grey
-          p.small Adresse de l'entreprise
-          p = artisan.adresse
-    .row
-      .col-sm-6
-        .card.card_grey
-          p.small Etat de l'entreprise
-          p = artisan.etat
-      .col-sm-6
-        .card.card_grey
-          p.small Date de création de l'entreprise
-          p = artisan.date_creation
-    .row
-      .col-sm-6
-        .card.card_grey
-          p.small Activité exercée
-          p = artisan.activite
-      .col-sm-6
-        .card.card_grey
-          p.small Date de dernière vérification des informations
-          p = artisan.date_verification
-    .row
-      .col-sm-6
-        .card.card_grey
-          p.small Catégorie juridique
-          p = artisan.categorie
+    - if artisan.errors.any?
+      .mx-0.mx-sm-4
+        .row
+          .col-xs-12
+          - if artisan.errors[:base].any?
+            .card.rounded.bg-alert-success-1.p-4.alert
+              p = artisan.errors.full_messages.to_sentence
+          - else
+            .card.rounded.bg-alert-error-1.p-4.alert
+              p = artisan.errors.full_messages.to_sentence
+    - else
+      .row
+        .col-sm-6
+          .card.card_grey
+            p.small Nom de l'entreprise
+            p = artisan.name
+        .col-sm-6
+          .card.card_grey
+            p.small Adresse de l'entreprise
+            p = artisan.adresse
+      .row
+        .col-sm-6
+          .card.card_grey
+            p.small Etat de l'entreprise
+            p = artisan.etat
+        .col-sm-6
+          .card.card_grey
+            p.small Date de création de l'entreprise
+            p = artisan.date_creation
+      .row
+        .col-sm-6
+          .card.card_grey
+            p.small Activité exercée
+            p = artisan.activite
+        .col-sm-6
+          .card.card_grey
+            p.small Date de dernière vérification des informations
+            p = artisan.date_verification
+      .row
+        .col-sm-6
+          .card.card_grey
+            p.small Catégorie juridique
+            p = artisan.categorie
