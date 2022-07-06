@@ -37,17 +37,11 @@ section#pourquoi-verifier-siret.py-5
                   p
                     | <b>À savoir :</b> Nous ne collectons pas de données individuelles à partir des résultats de recherche.
 
-  section#infos-artisan.py-5
-    .container
-      .row
-        .col-xs-12.col-sm-10.offset-sm-1
-          .card.rounded.p-4
-            = turbo_frame_tag "display_artisan" do |f|
-              = render "artisan", artisan: @new_artisan
+= turbo_frame_tag "display_artisan" do |f|
+  = render "artisan", artisan: @new_artisan
 
-= turbo_frame_tag @artisan do |f|
-  section#comparaison-infos.py-5
-    = render "verifier_infos"
+section#comparaison-infos.py-5
+  = render "verifier_infos"
 
 footer
   = render "footer"

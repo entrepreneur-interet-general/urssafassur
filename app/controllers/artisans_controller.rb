@@ -4,7 +4,7 @@ class ArtisansController < ApplicationController
 
     if artisan_to_check.valid?
       artisan_to_display = create_artisan_with_sirene_api(siret: artisan_params[:siret])
-   
+      
       render turbo_stream: [
         turbo_stream.replace("display_artisan", partial: "artisan", locals: { artisan: artisan_to_display }),
         turbo_stream.replace("siret_form", partial: "artisan_form", locals: { artisan: Artisan.new })
@@ -27,6 +27,7 @@ class ArtisansController < ApplicationController
     find_artisan = ArtisanContact.get(siret: siret)
 
     Artisan.create(
+      siret: siret,
       name: find_artisan.name,
       activite: find_artisan.activite,
       adresse: find_artisan.adresse,
