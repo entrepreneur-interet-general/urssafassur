@@ -36,9 +36,13 @@ class ArtisanContact
       adresse: adresse.titleize,
       etat: etat,
       categorie: company["etablissement"]["uniteLegale"]["categorieEntreprise"],
-      date_creation: company["etablissement"]["dateCreationEtablissement"],
-      date_verification: company["etablissement"]["dateDernierTraitementEtablissement"]
+      date_creation: to_date(company["etablissement"]["dateCreationEtablissement"]),
+      date_verification: to_date(company["etablissement"]["dateDernierTraitementEtablissement"])
     )
+  end
+
+  def self.to_date(date)
+    Date.parse(date).strftime("%d/%m/%Y")
   end
 
   def initialize(name:, activite:, adresse:, etat:, categorie:, date_creation:, date_verification:)
