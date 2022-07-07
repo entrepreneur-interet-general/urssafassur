@@ -52,8 +52,6 @@ class ArtisanContact
     hash = CSV.read(file).to_h
 
     libelle = hash[activite.gsub(/[A-Z]/, '')]
-
-    activite + " " + libelle
   end
 
   def initialize(name:, activite:, adresse:, etat:, categorie:, date_creation:, date_verification:)
