@@ -7,12 +7,12 @@ class ArtisansController < ApplicationController
       
       render turbo_stream: [
         turbo_stream.update("display_artisan", partial: "artisan", locals: { artisan: artisan_to_display }),
-        turbo_stream.replace("siret_form", partial: "artisan_form", locals: { artisan: Artisan.new })
+        turbo_stream.update("siret_form", partial: "artisan_form", locals: { artisan: Artisan.new })
       ]
     else
       render turbo_stream: [
         turbo_stream.update("display_artisan", partial: "artisan", locals: { artisan: artisan_to_check }),
-        turbo_stream.replace("siret_form", partial: "artisan_form", locals: { artisan: Artisan.new }),
+        turbo_stream.update("siret_form", partial: "artisan_form", locals: { artisan: Artisan.new }),
       ]
     end
   end
