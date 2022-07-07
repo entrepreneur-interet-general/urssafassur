@@ -1,3 +1,5 @@
+require 'csv'
+
 class ArtisanContact
   def self.get(siret:)
     response = ApiSirene.get(
@@ -32,7 +34,7 @@ class ArtisanContact
 
     ArtisanContact.new(
       name: name,
-      activite: company["etablissement"]["uniteLegale"]["activitePrincipaleUniteLegale"],
+      activite: humanize_activity(company["etablissement"]["uniteLegale"]["activitePrincipaleUniteLegale"]),
       adresse: adresse.titleize,
       etat: etat,
       categorie: company["etablissement"]["uniteLegale"]["categorieEntreprise"],
@@ -43,6 +45,15 @@ class ArtisanContact
 
   def self.to_date(date)
     Date.parse(date).strftime("%d/%m/%Y")
+  end
+
+  def self.humanize_activity(activite)
+    file = File.join(File.dirname(__FILE__), "naf2008-liste-n4-classes.csv")
+    hash = CSV.read(file).to_h
+
+    libelle = hash[activite.gsub(/[A-Z]/, '')]
+
+    activite + " " + libelle
   end
 
   def initialize(name:, activite:, adresse:, etat:, categorie:, date_creation:, date_verification:)
