@@ -6,12 +6,12 @@ class ArtisansController < ApplicationController
       artisan_to_display = create_artisan_with_sirene_api(siret: artisan_params[:siret])
       
       render turbo_stream: [
-        turbo_stream.replace("display_artisan", partial: "artisan", locals: { artisan: artisan_to_display }),
+        turbo_stream.update("display_artisan", partial: "artisan", locals: { artisan: artisan_to_display }),
         turbo_stream.replace("siret_form", partial: "artisan_form", locals: { artisan: Artisan.new })
       ]
     else
       render turbo_stream: [
-        turbo_stream.replace("display_artisan", partial: "artisan", locals: { artisan: artisan_to_check }),
+        turbo_stream.update("display_artisan", partial: "artisan", locals: { artisan: artisan_to_check }),
         turbo_stream.replace("siret_form", partial: "artisan_form", locals: { artisan: Artisan.new }),
       ]
     end
